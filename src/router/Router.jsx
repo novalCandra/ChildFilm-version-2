@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import LoginPage from "../auth/Login";
+import RegisterPage from "../auth/Register";
 
 const router = createBrowserRouter([
     {
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
     {
         path: "/login",
         element: <LoginPage />
+    },
+    {
+        path: "/register",
+        element: <RegisterPage />
     }
 ])
 

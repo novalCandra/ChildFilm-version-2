@@ -1,7 +1,10 @@
 import { data, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-export default function CardComponents({ title, deskripsi, deskripsiText, linkTwo, textButton, link, imageLogo, imageLogoGoogle }) {
-    const { register, handleSubmit, formState: { errors }, } = useForm();
+import { zodResolver } from "@hookform/resolvers/zod";
+export default function CardComponents({ title, deskripsi, deskripsiText, linkTwo, textButton, link, imageLogo, imageLogoGoogle, linkPath, textButtonGoogle, formFiled, schema }) {
+    const { register, handleSubmit, formState: { errors }, } = useForm({
+        resolver: zodResolver(schema)
+    });
     const onSubmit = () => {
         console.log(data)
     }
@@ -14,27 +17,29 @@ export default function CardComponents({ title, deskripsi, deskripsiText, linkTw
                 <h2 className="text-xl md:text-3xl text-white text-center font-bold">{title}</h2>
                 <p className="text-md md:text-md text-white text-center">{deskripsi}</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col -mt-5 space-y-2 md:px-5 w-85 md:w-600 max-w-md mx-auto">
-                <label htmlFor="username" className="text-white text-md  md:text-lg">Username</label>
-                <input id="username" type="text" name="username" placeholder="Masukan username"
-                    className="w-full rounded-2xl border-2 border-white px-3 py-2 text-white" {...register("username", { required: true })} />
-                {errors.username && <p className="text-red-500 text-md">username wajib diisi</p>}
-                <label htmlFor="password" className="text-white text-md  md:text-lg">Kata Sandi</label>
-                <input type="password" name="password" id="password" placeholder="Masukan Kata Sandi"
-                    className="w-full rounded-2xl border-2 border-white px-3 py-2 text-white" {...register("password", { required: true })} />
-                {errors.password && <p className="text-red-500 text-md">password Wajib diisi</p>}
+            <form onSubmit={handleSubmit(onSubmit)} className="-mt-5 space-y-2 md:px-5 w-85 md:w-600 max-w-md mx-auto">
+                {formFiled?.map((field) => (
+                    <>
+                        <div className="flex flex-col">
+                            <label key={field.id} htmlFor={field.name} className="text-white text-md  md:text-lg">{field.label}</label>
+                        </div>
+                        <input id={field.name} type={field.type} name={field.name} placeholder={field.placehonder}
+                            className="w-full rounded-2xl border-2 border-white px-3 py-2 text-white" {...register(field.name, { required: true })} />
+                        {errors[field.name] && <p className="text-red-500 text-md">{errors[field.name]?.message}</p>}
+                    </>
+                ))}
                 <div className="flex flex-row justify-between gap-4">
                     <p className="text-gray-400 text-sm md:text-md">{deskripsiText} <Link
-                        href="../page/register.html" className="text-white text-sm md:text-md">{link}</Link></p>
+                        to={linkPath} className="text-white text-sm md:text-md">{link}</Link></p>
                     <Link href="link" className="text-white text-sm md:text-md">{linkTwo}</Link>
                 </div>
                 <div className="flex flex-col space-y-2">
-                    <button
+                    <button type="submit"
                         className="px-3 py-3 bg-[#3D4142] rounded-4xl text-white cursor-pointer  border border-gray-500">{textButton}</button>
                     <p className="text-white text-center">OR</p>
                     <Link to="google.com"
                         className="flex flex-row gap-3 px-3 py-3 bg-transparent rounded-4xl text-white border border-gray-500 cursor-pointer justify-center items-center">
-                        <img src={imageLogoGoogle} width="20" alt="button" />Masuk dengan Google
+                        <img src={imageLogoGoogle} width="20" alt="button" />{textButtonGoogle}
                     </Link>
                 </div>
             </form>
