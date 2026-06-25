@@ -1,11 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import LoginPage from "../auth/Login";
 import RegisterPage from "../auth/Register";
+import LandingPage from "../page/LandingPage";
+import LayoutLandingPage from "../layout/LayoutLandingPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>HELLO</div>
+        Component: LayoutLandingPage,
+        children: [
+            { index: true, Component: LandingPage }
+        ]
     },
     {
         path: "/login",
