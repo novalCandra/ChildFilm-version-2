@@ -8,16 +8,22 @@ export const ConfigAuthLogin = {
     deskripsiText: "Belum Punya akun ?",
     textButton: "Login",
     link: "Daftar",
+    linkPath: "/register",
+    linkTwo: "Lupa kata sandi ?",
     fields: [
         {
+            id: 1,
             name: "username",
             label: "username",
-            type: "text"
+            type: "text",
+            placehonder: "Masukan username"
         },
         {
+            id: 2,
             name: "password",
             label: "password",
-            type: "password"
+            type: "password",
+            placehonder: "Masukan Kata sandi"
         }
     ]
 }
