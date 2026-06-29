@@ -17,10 +17,10 @@ export default function HeaderLandingPage({ heading, deskripsi, deskripsiButtonO
                                 className="bg-blue-800 text-white px-1 py-2 md:px-5 md:py-3 w-20 rounded-2xl font-lato">{deskripsiButtonThree}</button>
                             <div className="flex flex-row bg-[#3D4142]/70 px-2 py-2 md:px-6 md:py-3 rounded-xl font-lato gap-2 items-center">
                                 <CircleAlert size={24} />
-                                <span>{deskripsiButtonTwo}</span>
+                                <span className='font-lato text-md md:text-xl'>{deskripsiButtonTwo}</span>
                             </div>
-                            <button className="border-2 border-gray-500 rounded-full md:rounded-3xl px-1 py-1 md:px-2.5 md:py-2.5
-                        text-xl font-lato">{deskripsiButtonOne}</button>
+                            <button className="border-2 border-gray-500 rounded-full md:rounded-3xl px-2 py-2 md:px-2.5 md:py-2.5
+                        text-md md:text-xl font-lato">{deskripsiButtonOne}</button>
                         </div>
                         <button
                             className="border-2 border-gray-500 rounded-full md:rounded-3xl px-1 py-1 md:px-2.5 md:py-2.5 text-xl font-lato cursor-pointer animate-bounce">
