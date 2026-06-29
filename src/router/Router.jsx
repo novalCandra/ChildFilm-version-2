@@ -3,6 +3,7 @@ import LoginPage from "../auth/Login";
 import RegisterPage from "../auth/Register";
 import LandingPage from "../page/LandingPage";
 import LayoutLandingPage from "../layout/LayoutLandingPage";
+import PageDaftar from "../page/users/daftarFilm/PageDaftar";
 
 const router = createBrowserRouter([
     {
@@ -10,6 +11,13 @@ const router = createBrowserRouter([
         Component: LayoutLandingPage,
         children: [
             { index: true, Component: LandingPage }
+        ]
+    },
+    {
+        path: "/daftar-users",
+        Component: LayoutLandingPage,
+        children: [
+            { index: true, Component: PageDaftar }
         ]
     },
     {
