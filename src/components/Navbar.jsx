@@ -1,28 +1,42 @@
 import { Link } from "react-router-dom"
-import LogoPngDekstop from "../assets/logo.png"
-import LogoPngMobile from "../assets/logo_mobile.png"
-import LogoProvile from "../assets/provil.png"
-export default function Navbar() {
+import { ChevronDown } from "lucide-react"
+import { useState } from "react"
+export default function Navbar({ LogoPngDekstop, LogoPngMobile, LogoProvile, mapNavbar, mapNavbarMenu }) {
+    const [menu, setMenu] = useState(false);
+    function setModalMenu() {
+        setMenu(prev => !prev)
+    }
     return (
-        // <div className="relative">
         <nav
             className="flex flex-row justify-between items-center bg-[#2F3334] text-white px-4 md:px-8 py-7 w-full max-md-w cursor-pointer z-10">
             <div className="flex flex-row space-x-2 md:space-x-10">
                 <img src={LogoPngDekstop} alt="logo" className="hidden md:block w-25 md:w-32" />
                 <img src={LogoPngMobile} alt="logo" className="block md:hidden w-7" />
-                <ul className="flex flex-row gap-3 md:gap-20 text-sm md:text-xl font-lato items-center">
-                    <li>Series</li>
-                    <li>Film</li>
-                    <li><Link to={"/daftar-users"}>Daftar saya</Link></li>
-                </ul>
+                {mapNavbar?.map((item) => (
+                    <ul key={item.id} className="flex flex-row gap-3 md:gap-20 text-sm md:text-xl font-lato items-center">
+                        <li><Link to={item.path}>{item.textList}</Link></li>
+                    </ul>
+                ))}
             </div>
-            <div className="flex flex-row space-x-2 md:space-x-0">
+            <div className="flex flex-row space-x-2 md:space-x-4 items-center">
                 <img src={LogoProvile} alt="profile" className=" w-7 md:w-12 rounded-full md:rounded-2xl" />
-                <select name="" id="" className="bg-[#2F3334] w-1 px-3 md:px-4">
-                    <option value="" className="font-lato rounded-4xl">Profile saya</option>
-                    <option value="" className="font-lato rounded-4xl">Ubah Premium</option>
-                    <option id="logout" value="logout" className="font-lato cursor-pointer rounded-4xl">Keluar</option>
-                </select>
+                <button type="submit" className="flex flex-col bg-[#2F3334]" onClick={setModalMenu}>
+                    <ChevronDown size={28} className="text-white md:size-8 cursor-pointer" />
+                    {menu && (
+                        <div className={`absolute top-22 right-2 flex flex-col bg-[#181A1C]/80 w-39 h-32 text-white z-10 rounded-md transition duration-300 origin-top-right ${menu ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"}`}>
+                            {mapNavbarMenu.map((item) => {
+                                const IconItem = item.CheckIcon
+                                return (
+                                    <ul key={item.id} className="flex flex-col px-2 h-full justify-center space-y-4 cursor-pointer">
+                                        <Link to={item.path}>
+                                            <li className={`flex flex-row items-center gap-1 transition duration-100 delay-100 hover:text-blue-600`}><IconItem size={24} /><span className="text-base md:text-md font-lato">{item.textList}</span></li>
+                                        </Link>
+                                    </ul>
+                                )
+                            })}
+                        </div>
+                    )}
+                </button>
                 {/* <!-- <div className="hidden flex flex-row space-x-3">
                                     <a href="./page/login.html">
                                         <button type="submit"
@@ -34,6 +48,5 @@ export default function Navbar() {
                                 </div> --> */}
             </div>
         </nav>
-        // </div>
     )
 }

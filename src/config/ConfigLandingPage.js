@@ -1,3 +1,7 @@
+import imageLogoDekstop from "../assets/logo.png"
+import imageLogoMobile from "../assets/logo_mobile.png"
+import LogoProfile from "../assets/provil.png"
+import { LogOut, Star, User } from "lucide-react"
 export const ConfigHeaderLanding = {
     heading: "Duty After School",
     deskripsi: "Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.",
@@ -35,7 +39,7 @@ export const ConfigMainRilisNew = {
         }
     ]
 }
-import imageLogoDekstop from "../assets/logo.png"
+
 export const ConfigFooter = {
     imageLogoDekstop: imageLogoDekstop,
     headingFooter: "&copy;2026 Chill All Right Reserved",
@@ -157,6 +161,49 @@ export const ConfigFooter = {
         {
             id: 4,
             listContent: "Britania"
+        }
+    ]
+}
+
+export const ConfigNavbar = {
+    LogoPngDekstop: imageLogoDekstop,
+    LogoPngMobile: imageLogoMobile,
+    logoProvile: LogoProfile,
+    listNavbar: [
+        {
+            id: 1,
+            textList: "Series",
+            path: "#"
+        },
+        {
+            id: 2,
+            textList: "Film",
+            path: "#"
+        },
+        {
+            id: 3,
+            textList: "Series",
+            path: "/daftar-users"
+        }
+    ],
+    menuList: [
+        {
+            id: 1,
+            textList: "Profile saya",
+            path: "#",
+            CheckIcon: User
+        },
+        {
+            id: 2,
+            textList: "Ubah Premium",
+            path: "#",
+            CheckIcon: Star
+        },
+        {
+            id: 3,
+            textList: "Keluar",
+            path: "/login",
+            CheckIcon: LogOut
         }
     ]
 }
