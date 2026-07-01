@@ -3,4 +3,75 @@
 
 @theme {
     --font-lato: "Lato", sans-serif;
+    /* COLORS */
+    /* MAIN */
+    --color-primary: #3254FF;
+    --color-primary-100: #243FDB;
+    --color-primary-200: #192DB7;
+    --color-primary-300: #0F1E93;
+    --color-primary-400: #09147A;
+    /* END MAIN */
+
+    /* TEXT COLOR */
+    --text-dark-primary: oklch(0.3389 0.0217 304.16 / 87%);
+    --text-dark-secondary: oklch(0.3389 0.0217 304.16 / 68%);
+    --text-dark-disabled: oklch(0.3389 0.0217 304.16 / 38%);
+
+    --text-light-primary: oklch(0.9265 0.0339 293.07 / 87%);
+    --text-light-secondary: oklch(0.9265 0.0339 293.07 / 68%);
+    --text-light-disabled: oklch(0.9265 0.0339 293.07 / 38%);
+    /* END TEXT COLOR */
+
+    /* OTHER */
+    --other-paper-background: oklch(0.2717 0.0093 219.82);
+    --other-body-background: oklch(0.3176 0.0058 214.38);
+    --other-page-header-background: oklch(0.2165 0.005 248.06);
+    --other-page-extra-background: oklch(0.3719 0.0056 214.36);
+
+    --other-outlie-border: oklch(0.9265 0.0339 293.07 / 23%);
+    --other-input-border: oklch(0.9265 0.0339 293.07 / 22%);
+    --other-input-fieldBg: oklch(0.9265 0.0339 293.07 / 4%);
+    --other-input-chipbg: oklch(0.9265 0.0339 293.07 / 8%);
+    /* END OTHER */
+    /* INFO */
+    --info-presed: oklch(0.4518 0.1801 259.76);
+    --info-hover: oklch(0.5359 0.1948 257.77);
+    --info-default: oklch(0.6281 0.2037 254.79);
+    --info-bacground: oklch(0.9368 0.0419 223.32 / 30%);
+    /* END INFO */
+
+    /* SUCCESS */
+    --success-presed: oklch(0.6414 0.1663 133.74);
+    --success-hover: oklch(0.737 0.1795 131.88);
+    --success-default: oklch(0.8343 0.1899 129.92);
+    --success-bacground: rgba(244, 253, 219, 0.8);
+    /* END SUCCESS */
+
+    /* warnings */
+    --warnings-presed: oklch(0.7089 0.1461 99.88);
+    --warnings-hover: oklch(0.8146 0.1684 100.72);
+    --warnings-default: oklch(0.919 0.1905 101.69);
+    --warnings-bacground: oklch(0.9822 0.058 104.26 / 80%);
+    /* END warnings */
+
+    /* erros */
+    --erros-presed: oklch(0.5036 0.1868 27.7);
+    --erros-hover: oklch(0.5908 0.2001 29.85);
+    --erros-default: oklch(0.6854 0.2053 33.26);
+    --erros-bacground: oklch(0.9489 0.0341 64.57 / 50%);
+    /* END erros */
+
+    /* greyscale */
+    --greyscale-900: oklch(0.2478 0 0);
+    --greyscale-800: oklch(0.3791 0 0);
+    --greyscale-700: oklch(0.4926 0 0);
+    --greyscale-600: oklch(0.5624 0 0);
+    --greyscale-500: oklch(0.6993 0 0);
+    --greyscale-400: oklch(0.7984 0 0);
+    --greyscale-300: oklch(0.9067 0 0);
+    --greyscale-200: oklch(0.9491 0 0);
+    --greyscale-100: oklch(0.9702 0 0);
+    --greyscale-50: oklch(0.9851 0 0);
+    /* END greyscale */
+    /* END COLORS */
 }
