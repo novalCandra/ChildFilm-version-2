@@ -1,29 +1,34 @@
-import { useEffect, useState } from "react"
-import getstartFilm, { getRatingFilm } from "../service/movieService";
+import { useEffect, useRef, useState } from "react"
+import Aos from "aos";
+import "aos/dist/aos.css"
+export const useMovierUsers = () => {
+    const [popup, setPopup] = useState({
+        visible: false,
+        x: 0,
+    })
+    const scrollRefFilm = useRef(null)
+    const scrollRefRating = useRef(null)
+    const scrollRefRilis = useRef(null)
+    const scrollReTrending = useRef(null)
+    const handleHover = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setPopup({
+            visible: true,
+            x: rect.left,
+        })
+    }
 
-export const useHookMovies = () => {
-    const [startFilm, setStartFilm] = useState([]);
-    const [ratingFilm, setRatingFilm] = useState([]);
-    const [trendingFilm, setTrendingFilm] = useState([]);
-    const [startRilis, setStartRilis] = useState([]);
+    const handleLeave = () => {
+        setPopup((prev) => ({
+            ...prev,
+            visible: true
+        }))
+    }
 
     useEffect(() => {
-        const handleApiHookMoveies = () => {
-            try {
-                const [startFilmData, ratingFilmData, trendingFilmFData] = new Promise.all([
-                    getstartFilm(),
-                    getRatingFilm()
-                ])
-                setStartFilm(startFilmData)
-                setRatingFilm(ratingFilmData)
-                setStartRilis(trendingFilmFData)
-                setTrendingFilm(trendingFilmFData)
-            } catch (error) {
-                return console.log(error)
-            }
-        }
-        handleApiHookMoveies()
-    })
+        Aos.init({ duration: 1200, delay: 100 })
+        Aos.refresh()
+    }, [])
 
-    return { startFilm, ratingFilm, trendingFilm, startRilis }
+    return { popup, scrollRefFilm, scrollRefRating, scrollRefRilis, scrollReTrending, handleHover, handleLeave }
 }

@@ -4,6 +4,7 @@ import RegisterPage from "../auth/Register";
 import LandingPage from "../page/LandingPage";
 import LayoutLandingPage from "../layout/LayoutLandingPage";
 import PageDaftar from "../page/users/daftarFilm/PageDaftar";
+import PageSeries from "../page/users/daftarFilm/PageSeries";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,13 @@ const router = createBrowserRouter([
         Component: LayoutLandingPage,
         children: [
             { index: true, Component: PageDaftar }
+        ]
+    },
+    {
+        path: "/series",
+        Component: LayoutLandingPage,
+        children: [
+            { index: true, Component: PageSeries }
         ]
     },
     {
