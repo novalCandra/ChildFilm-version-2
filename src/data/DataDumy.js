@@ -1,81 +1,4 @@
 import ImageBlueVertikal from "../assets/blueVertikal.png"
-export const dataDumyDaftar = {
-    headingDaftar: "DAFTAR SAYA",
-    data: [
-        {
-            id: 1,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 2,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 3,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 4,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 5,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 6,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 1,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 2,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 3,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 4,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 5,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-        {
-            id: 6,
-            image: ImageBlueVertikal,
-            episodeBaru: "Episode Baru",
-            top: "Top 10"
-        },
-    ]
-}
 import duyung from "../assets/duyumg_one.png"
 import duty from "../assets/duty.png"
 import hero from "../assets/hero copy.png"
@@ -108,6 +31,70 @@ import dutyHorizontal from "../assets/duty_horizontal.png"
 import spidermanHorizotal from "../assets/spiderman_horizontal.png"
 import missinghorizontal from "../assets/missing_horizontal.png"
 import fastHorizontal from "../assets/fast.png"
+export const dataDumyDaftar = {
+    headingDaftar: "DAFTAR SAYA",
+    data: [
+        {
+            id: 1,
+            image: ImageBlueVertikal,
+            episodeBaru: "Episode Baru",
+            top: "Top 10"
+        },
+        {
+            id: 2,
+            image: suzume,
+        },
+        {
+            id: 3,
+            image: spiderman,
+            episodeBaru: "Episode Baru",
+        },
+        {
+            id: 4,
+            image: korea_vertikal,
+            episodeBaru: "Episode Baru",
+            top: "Top 10"
+        },
+        {
+            id: 5,
+            image: dino,
+            episodeBaru: "Episode Baru",
+        },
+        {
+            id: 6,
+            image: sonic,
+            episodeBaru: "Episode Baru",
+            top: "Top 10"
+        },
+        {
+            id: 6,
+            image: duty,
+            top: "Top 10"
+        },
+        {
+            id: 7,
+            image: rio,
+            top: "Top 10"
+        },
+        {
+            id: 8,
+            image: eropa,
+        },
+        {
+            id: 9,
+            image: guarden,
+        },
+        {
+            id: 10,
+            image: fastFurios,
+        },
+        {
+            id: 11,
+            image: hero,
+        },
+    ]
+}
+
 export const dataDumyRilisBaru = [
     {
         id: 1,
@@ -269,3 +256,45 @@ export const dataFilmLanjutan = [
         imageHover: shaxam
     }
 ]
+
+
+export const datadumySeriesFilm = {
+    data: [
+        {
+            id: 1,
+            image: suzume,
+            series: "Premium",
+            spesialDeksripsi: "Top 10",
+            imageHover: suzumeHorizontal
+        },
+        {
+            id: 2,
+            image: dino,
+            imageHover: dinoHorizontal
+        },
+        {
+            id: 3,
+            image: guarden,
+            imageHover: guardenHorizontal,
+            series: "Premium",
+        },
+        {
+            id: 4,
+            image: sonic,
+            imageHover: sonicHorizontal,
+            series: "Premium",
+        },
+        {
+            id: 5,
+            image: area,
+            imageHover: dead,
+            series: "Premium",
+        },
+        {
+            id: 6,
+            image: rio,
+            imageHover: rioHorizontal,
+            series: "Premium",
+        },
+    ]
+}
