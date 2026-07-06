@@ -12,20 +12,33 @@ export default function AsideComponents({ HeadingAside, reloadMapping, scrollRef
             <h1 className="text-white text-xl md:text-3xl font-lato">{HeadingAside}</h1>
             <button type="button" onClick={() => scroll(scrollRefLeft, -300)}
                 className="hidden md:block absolute left-12 bottom-64 px-2 py-2 rounded-full bg-[#2F3334] z-10"><ArrowLeft size={24} className="text-white" /></button>
-            <div id="rilis" ref={scrollRef} className="flex gap-7 overflow-x-auto scrollbar overflow-y-hidden" data-aos="fade-up">
+            <div id="rilis" ref={scrollRef} className="flex gap-7 overflow-x-auto scrollbar overflow-y-hidden relative" data-aos="fade-up">
                 {reloadMapping?.map((item) => {
-                    let badgeClass = "px-0 py-0 w-0 h-0";
-                    if (item.spesialDeksripsi) {
-                        badgeClass = "py-0.1 px-1 md:py-2 md:px-2 w-8 md:w-12 bg-[#B71F1D] right-1 md:right-12 top-0 rounded-br-lg cursor-pointer font-bold font-lato text-center"
-                    } else if (item.populer) {
-                        badgeClass = "bg-[#0F1E93] px-1 rounded-[10px] py-1 md:px-2 md:py-2 left-2.5 top-6 md:w-36 md:rounded-[20px] cursor-pointer font-bold font-lato text-center text-sm md:text-md"
-                    }
+                    const badgeConfigs = [
+                        {
+                            text: item.spesialDeksripsi,
+                            className: "py-0.1 px-1 md:py-2 md:px-2 w-8 md:w-12 bg-[#B71F1D] right-0 md:-right-1 top-0 rounded-br-lg cursor-pointer font-bold font-lato text-center"
+                        },
+                        {
+                            text: item.populer,
+                            className: "bg-[#0F1E93] px-1 rounded-[10px] py-1 md:px-2 md:py-2 left-2.5 top-6 md:w-36 md:rounded-[20px] cursor-pointer font-bold font-lato text-center text-sm md:text-md"
+                        },
+                        {
+                            text: item.series,
+                            className: "bg-[#B7A207] px-1 rounded-[10px] py-1 md:px-2 md:py-2 left-2.5 top-6 md:w-24 md:rounded-[20px] cursor-pointer font-bold font-lato text-center text-sm md:text-md"
+                        }
+                    ].filter((badge) => Boolean(badge.text));
+
                     return (
                         <div key={item.id} onMouseEnter={handleHoverProps} onMouseLeave={handleLeaveProps} className="shrink-0 relative group">
-                            <div className="block transition-opacity duration-300 group-hover:opacity-0">
-                                <span
-                                    className={`absolute text-white ${badgeClass}`}>
-                                    {item.spesialDeksripsi ?? item.populer}</span>
+                            <div className="block relative transition-opacity duration-300 group-hover:opacity-0">
+                                {badgeConfigs.map((badge) => (
+                                    <span
+                                        key={badge.text}
+                                        className={`absolute text-white ${badge.className}`}>
+                                        {badge.text}
+                                    </span>
+                                ))}
                                 <img src={item.image} alt="avatar"
                                     className="w- h-60 md:w-77.5 md:h-full bg-center bg-repeat bg-cover rounded-2xl" />
                             </div>

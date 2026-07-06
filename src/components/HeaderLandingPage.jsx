@@ -1,11 +1,19 @@
-import { CircleAlert, VolumeOff } from 'lucide-react'
+import { ChevronRight, CircleAlert, VolumeOff } from 'lucide-react'
 
-export default function HeaderLandingPage({ heading, deskripsi, deskripsiButtonOne, deskripsiButtonTwo, deskripsiButtonThree }) {
+export default function HeaderLandingPage({ heading, deskripsi, deskripsiButtonOne, deskripsiButtonTwo, deskripsiButtonThree, genre }) {
     return (
         <header
             className="relative bg-[url('assets/gojo.jpg')] bg-repeat bg-cover bg-center h-100 md:min-h-190 flex items-end md:items-center">
             <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent"></div>
-            <div className="relative flex flex-col z-10 text-white px-2 md:px-10 w-full pb-6 md:pb-0 space-y-5">
+            <div className="relative flex flex-col z-10 text-white px-2 md:px-10 w-full max-h-7xl pb-6 md:pb-0 space-y-5 mt-0 md:mt-52">
+                {genre && (
+                    <div className="hidden md:block md:absolute -top-64 left-20">
+                        <button className="bg-[#22282A] w-[115px] h-[44px] absolute rounded-[8px] flex flex-row items-center justify-center space-x-2">
+                            <span className="text-md text-white font-semibold font-lato">{genre}</span>
+                            <ChevronRight size={24} className="text-white" />
+                        </button>
+                    </div>
+                )}
                 <div className="space-y-4 md:space-y-6 px-10 w-full md:max-w-2xl">
                     <h1 className="text-2xl md:text-5xl font-lato">{heading}</h1>
                     <p className="text-md  md:text-lg font-lato line-clamp-3 md:line-clamp-none">{deskripsi}</p>

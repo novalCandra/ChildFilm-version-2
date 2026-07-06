@@ -1,31 +1,7 @@
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Dot, Play, Star } from "lucide-react"
-import { useState } from "react"
+import { useMovierUsers } from "../hooks/useMovieUsers"
 export default function AsideComponentsTwo({ HeadingAside, reloadMapData, scrollRefLeft, scrollRefRight, scrollRef }) {
-    const [popup, setPopup] = useState({
-        visible: false,
-        x: 0,
-    })
-    const scroll = (ref, amount) => {
-        ref?.current.scrollBy({
-            left: amount,
-            behavior: "smooth"
-        })
-    }
-
-    const handleHover = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setPopup({
-            visible: true,
-            x: rect.left,
-        })
-    }
-
-    const handleLeave = () => {
-        setPopup((prev) => ({
-            ...prev,
-            visible: true
-        }))
-    }
+    const { popup, handleHover, handleLeave } = useMovierUsers()
     return (
         <section className="relative py-5 px-10 md:py-10 md:px-20 space-y-10" data-aos="fade-up">
             <h2 className="text-white text-xl md:text-3xl font-lato">{HeadingAside}</h2>
@@ -33,7 +9,7 @@ export default function AsideComponentsTwo({ HeadingAside, reloadMapData, scroll
                 className="hidden md:block absolute left-16 bottom-32 px-2 py-2 rounded-full bg-[#2F3334] z-10 cursor-pointer"><ArrowLeft size={24} className="text-white" /></button>
             <div id="film" ref={scrollRef} className="flex gap-7 space-y-5 overflow-x-auto scrollbar transition overflow-y-hidden">
                 {reloadMapData?.map((item) => (
-                    <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className="shrink-0 group">
+                    <div key={item.id} onMouseEnter={handleHover} onMouseLeave={handleLeave} className="shrink-0 group">
                         <div className="relative transition duration-200 group-hover:opacity-0">
                             <span
                                 className={`absolute text-white ${item.populer ? "bg-primary-300 px-1 rounded-[10px] py-1 md:px-2 md:py-2 left-2.5 top-6 md:w-36 md:rounded-[20px] cursor-pointer font-bold font-lato text-center text-sm md:text-md" : "px-0 py-0 h-0 w-0"}`}>
