@@ -178,25 +178,30 @@ export const ConfigNavbar = {
         {
             id: 2,
             textList: "Film",
-            path: "#"
+            path: "/film"
         },
         {
             id: 3,
             textList: "Daftar Saya",
             path: "/daftar-users"
+        },
+        {
+            id: 4,
+            textList: "PlayList",
+            path: "/playlist"
         }
     ],
     menuList: [
         {
             id: 1,
             textList: "Profile saya",
-            path: "#",
+            path: "/profile",
             CheckIcon: User
         },
         {
             id: 2,
             textList: "Ubah Premium",
-            path: "#",
+            path: "/premium",
             CheckIcon: Star
         },
         {
