@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
+        "judulPlayList": "All Spiderman into the Spider verse songs",
+        "namaPlayList": "Savira - PlayList"
+    },
+    {
+        "id": 2,
+        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
+        "judulPlayList": "All Spiderman into the Spider verse songs",
+        "namaPlayList": "Olivia - PlayList"
+    },
+    {
+        "id": 3,
+        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
+        "judulPlayList": "All Spiderman into the Spider verse songs",
+        "namaPlayList": "Olivia - PlayList"
+    },
+    {
+        "id": 4,
+        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
+        "judulPlayList": "All Spiderman into the Spider verse songs",
+        "namaPlayList": "Olivia - PlayList"
+    }
+]

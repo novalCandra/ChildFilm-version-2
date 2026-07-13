@@ -5,8 +5,8 @@ import { LogOut, Star, User } from "lucide-react"
 export const ConfigHeaderLanding = {
     heading: "Duty After School",
     deskripsi: "Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.",
-    deskripsiButtonOne: "Selengkapnnya",
-    deskripsiButtonTwo: "18+",
+    deskripsiButtonOne: "18+",
+    deskripsiButtonTwo: "Selengkapnnya",
     deskripsiButtonThree: "Mulai",
 }
 export const ConfigMainRilisNew = {
@@ -173,30 +173,35 @@ export const ConfigNavbar = {
         {
             id: 1,
             textList: "Series",
-            path: "#"
+            path: "/series"
         },
         {
             id: 2,
             textList: "Film",
-            path: "#"
+            path: "/film"
         },
         {
             id: 3,
-            textList: "Series",
+            textList: "Daftar Saya",
             path: "/daftar-users"
+        },
+        {
+            id: 4,
+            textList: "PlayList",
+            path: "/playlist"
         }
     ],
     menuList: [
         {
             id: 1,
             textList: "Profile saya",
-            path: "#",
+            path: "/profile",
             CheckIcon: User
         },
         {
             id: 2,
             textList: "Ubah Premium",
-            path: "#",
+            path: "/premium",
             CheckIcon: Star
         },
         {

@@ -9,7 +9,7 @@ export default function CardComponents({ title, deskripsi, deskripsiText, linkTw
         console.log(data)
     }
     return (
-        <div className="flex flex-col space-y-6 w-full md:w-140 px-5 md:px-10 py-5 md:py-10 bg-[#22282A]/40 rounded-xl backdrop-blur-2xl">
+        <div className="flex flex-col space-y-6 w-120 md:w-140 px-5 md:px-10 py-5 md:py-10 bg-[#22282A]/40 rounded-xl backdrop-blur-2xl">
             <div className="justify-center items-center mx-auto">
                 <img src={imageLogo} alt="Foto Logo" className="w-32 items-center justify-center" />
             </div>
