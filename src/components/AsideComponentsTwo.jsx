@@ -17,10 +17,10 @@ export default function AsideComponentsTwo({ HeadingAside, reloadMapData, scroll
                             <img src={item.image} alt="avatar"
                                 className="w-70 md:w-100 md:h-60 rounded-2xl bg-cover bg-repeat bg-center" />
                             <div className="flex flex-row justify-between -mt-10 px-3 text-white bg-blue-200">
-                                <span className="font-lato">Don’t Look Up</span>
+                                <span className="font-lato font-semibold">{item.deskripsi}</span>
                                 <div className="flex flex-row gap-3 items-center">
                                     <Star size={20} />
-                                    <span className="font-lato text-md">4.5/5</span>
+                                    <span className="font-lato text-md">{item.rating}</span>
                                 </div>
                             </div>
                         </div>
