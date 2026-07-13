@@ -1,26 +1,14 @@
 [
     {
         "id": 1,
-        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
+        "imageThumbnail": "../../public/header.png",
         "judulPlayList": "All Spiderman into the Spider verse songs",
-        "namaPlayList": "Savira - PlayList"
+        "namaPlayList": "John Due - PlayList"
     },
     {
         "id": 2,
-        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
+        "imageThumbnail": "../../public/header.png",
         "judulPlayList": "All Spiderman into the Spider verse songs",
-        "namaPlayList": "Olivia - PlayList"
-    },
-    {
-        "id": 3,
-        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
-        "judulPlayList": "All Spiderman into the Spider verse songs",
-        "namaPlayList": "Olivia - PlayList"
-    },
-    {
-        "id": 4,
-        "imageThumbnail": "../../src/assets/spiderman_horizontal.png",
-        "judulPlayList": "All Spiderman into the Spider verse songs",
-        "namaPlayList": "Olivia - PlayList"
+        "namaPlayList": "Vira Putri - PlayList"
     }
 ]
