@@ -1,12 +1,21 @@
-import { data, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-export default function CardComponents({ title, deskripsi, deskripsiText, linkTwo, textButton, link, imageLogo, imageLogoGoogle, linkPath, textButtonGoogle, formFiled, schema }) {
+import { AuthService } from "../service/AuthService";
+export default function CardComponents({ title, deskripsi, deskripsiText, linkTwo, textButton, link, imageLogo, imageLogoGoogle, linkPath, textButtonGoogle, formFiled, schema, linkPathNavigate }) {
     const { register, handleSubmit, formState: { errors }, } = useForm({
         resolver: zodResolver(schema)
     });
-    const onSubmit = () => {
-        console.log(data)
+    const navigate = useNavigate();
+    const onSubmit = async (data) => {
+        try {
+            const apiDataService = await AuthService(data);
+            const response = await apiDataService.json();
+            navigate(linkPathNavigate)
+            localStorage.setItem("username", response?.username)
+        } catch (error) {
+            return console.error(error)
+        }
     }
     return (
         <div className="flex flex-col space-y-6 w-120 md:w-140 px-5 md:px-10 py-5 md:py-10 bg-[#22282A]/40 rounded-xl backdrop-blur-2xl">
@@ -20,7 +29,7 @@ export default function CardComponents({ title, deskripsi, deskripsiText, linkTw
             <form onSubmit={handleSubmit(onSubmit)} className="-mt-5 space-y-2 md:px-5 w-85 md:w-600 max-w-md mx-auto">
                 {formFiled?.map((field) => (
                     <>
-                        <div className="flex flex-col">
+                        <div key={field.id} className="flex flex-col">
                             <label key={field.id} htmlFor={field.name} className="text-white text-md  md:text-lg font-lato">{field.label}</label>
                         </div>
                         <input id={field.name} type={field.type} name={field.name} placeholder={field.placehonder}
@@ -34,7 +43,7 @@ export default function CardComponents({ title, deskripsi, deskripsiText, linkTw
                     <Link href="link" className="text-white text-sm md:text-md font-lato">{linkTwo}</Link>
                 </div>
                 <div className="flex flex-col space-y-2">
-                    <button type="submit"
+                    <button
                         className="px-3 py-3 bg-[#3D4142] rounded-4xl text-white cursor-pointer  border border-gray-500 font-lato">{textButton}</button>
                     <p className="text-white text-center font-lato">OR</p>
                     <Link to="google.com"
