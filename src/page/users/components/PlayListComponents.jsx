@@ -55,7 +55,7 @@ export default function PlayListComponents({ imageThumbnail, handleModal, judulP
         setUpdateModal(false)
     }
     return (
-        <div className="flex flex-row items-center justify-between  space-x-2 border-2 border-olive-300 px-2 md:px-5 md:py-10 py-5 rounded-2xl relative">
+        <div className="flex flex-row items-center justify-between  space-x-2 border-2 border-olive-300 px-2 md:px-5 md:py-10 py-5 rounded-2xl  relative">
             <div className="flex flex-row items-center justify-center space-x-2 md:space-x-5">
                 <img src={imageThumbnail} alt="foto playlist" className="w-25 h-20 md:w-35 md:h-20 rounded-md" />
                 <div className="flex flex-col">
