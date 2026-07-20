@@ -23,10 +23,10 @@
     /* END TEXT COLOR */
 
     /* OTHER */
-    --other-paper-background: #22282a;
-    --other-body-background: #2f3334;
-    --other-page-header-background: #181a1c;
-    --other-page-extra-background: #3d4142;
+    --color-paper-background: #22282a;
+    --color-body-background: #2f3334;
+    --color-page-header-background: #181a1c;
+    --color-page-extra-background: #3d4142;
 
     --other-outlie-border: #e7e3fc3b;
     --other-input-border: #e7e3fc38;
