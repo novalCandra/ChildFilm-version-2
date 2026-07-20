@@ -11,11 +11,14 @@ import langganan from "../page/users/langganan/langganan";
 import Pembayaran from "../page/users/pembayaran/Pembayaran";
 import Transaksi from "../page/users/transaksi/Transaksi";
 import PlayListPage from "../page/users/playList/PlayList";
+import { AuthRouter } from "./AuthRouter";
+import NotFound from "../page/users/404/NotFound";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/beranda",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: LandingPage }
         ]
@@ -23,6 +26,7 @@ const router = createBrowserRouter([
     {
         path: "/daftar-users",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: PageDaftar }
         ]
@@ -30,6 +34,7 @@ const router = createBrowserRouter([
     {
         path: "/series",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: PageSeries }
         ]
@@ -37,6 +42,7 @@ const router = createBrowserRouter([
     {
         path: "/film",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: PageFilm }
         ]
@@ -44,6 +50,7 @@ const router = createBrowserRouter([
     {
         path: "/profile",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: Profile }
         ]
@@ -51,6 +58,7 @@ const router = createBrowserRouter([
     {
         path: "/premium",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: langganan }
         ]
@@ -59,6 +67,7 @@ const router = createBrowserRouter([
     {
         path: "/pembayaran",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: Pembayaran }
         ]
@@ -66,6 +75,7 @@ const router = createBrowserRouter([
     {
         path: "/transaksi",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: Transaksi }
         ]
@@ -73,17 +83,25 @@ const router = createBrowserRouter([
     {
         path: "/playlist",
         Component: LayoutLandingPage,
+        loader: AuthRouter,
         children: [
             { index: true, Component: PlayListPage }
         ]
     },
     {
-        path: "/login",
-        element: <LoginPage />
+        path: "/",
+        Component: LoginPage,
+        children: [
+            { index: true, Component: LoginPage }
+        ]
     },
     {
         path: "/register",
         element: <RegisterPage />
+    },
+    {
+        path: "*",
+        element: <NotFound />
     }
 ])
 
